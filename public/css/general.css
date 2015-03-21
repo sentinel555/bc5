@@ -1,0 +1,394 @@
+body { font-family: 'Noto Sans', sans-serif, arial, verdana;
+	font-size: 1.5em;}
+
+.margin-bottom-05 { margin-bottom: 0.5em; }
+.margin-bottom-10 { margin-bottom: 1.0em; }
+.margin-bottom-15 { margin-bottom: 1.5em; }
+.margin-bottom-20 { margin-bottom: 2.0em; }
+.margin-bottom-25 { margin-bottom: 2.5em; }
+.margin-bottom-30 { margin-bottom: 3.0em; }
+
+
+
+.no-style{
+    display:inline;
+}
+
+
+
+.left { text-align: left;} 
+.right { text-align: right;} 
+.center { text-align: center; }
+.img { float: left; text-align: left; }
+.text {  float: right; text-align: right; }
+
+.subheader {
+font-family: 'Noto Sans', sans-serif, arial, verdana;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding-left: 5px;
+  position: relative; 
+   width: 100%;
+        }
+
+div.calcheader {
+font-family: 'Noto Sans', sans-serif, arial, verdana;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  margin: 3px;
+  padding: 3px;
+  right: 0px;
+  height:20px;
+  position: relative; 
+   width: 100%;
+}
+
+
+div.content {
+font-family: 'Noto Sans', sans-serif, arial, verdana;
+  font-size: 10pt;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  margin: 3px;
+  padding: 3px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  position: relative; 
+        }
+
+
+.smaller {
+	font-family: 'Noto Sans', sans-serif, arial, verdana;
+  	font-size: 10pt;
+        color: #666666;
+	}
+
+.left { width: 50%; float:left; }
+.right { width: 50%; float:right; }
+
+
+#icons {
+	padding-left: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.subtable {
+	font-family: 'Noto Sans', sans-serif, arial, verdana;
+  	font-size: 10pt;
+        border: 0;
+        border-collapse: collapse; 
+        width: 100%;
+        color: #666666;
+	background-color: #FFFFFF;
+	padding: 0px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.maintable {
+	font-family: 'Noto Sans', sans-serif, arial, verdana;
+  	font-size: 10pt;
+        width: 95%;
+	background-color: #FFFFFF;
+	padding: 0px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #ebe7db;
+ }
+
+.shadow {
+    -moz-box-shadow: 0 0 1px #999999;
+    -webkit-box-shadow: 0 0 1px #999999;
+    box-shadow: 0 0 1px #999999;
+}
+div .blackline {
+        border-bottom: solid 1px #000000;
+        }       
+
+div .blackgreyline {
+        border-left: solid 2px #000000;
+        border-bottom: solid 1px #999999;
+        }
+div .greyline {
+        border-bottom: solid 1px #999999;
+        }       
+
+
+
+.table td.blackline {
+        border-left: solid 2px #000000;
+        padding-left: 25px;
+        }       
+
+.table td.blackgreyline {
+        border-left: solid 2px #000000;
+        border-bottom: solid 1px #999999;
+        padding-left: 25px;
+        }
+.table td.greyline {
+        border-bottom: solid 1px #999999;
+        }       
+
+.table td.greylinetop {
+        border-top: solid 1px #999999;
+        }
+.table td.greylineleft {
+        border-top: solid 1px #999999;
+        border-left: solid 2px #000000;
+        }       
+.table td.greylinedashed {
+        border-top: dashed 1px #999999;
+        }       
+
+.table td.greylineleftdashed {
+        border-top: dashed 1px #999999;
+        border-left: solid 2px #000000;
+        } 
+
+.table td.bluelines {
+	border-bottom: solid 1px #0000FF;
+	border-top: solid 1px #0000FF;
+	}
+
+.table td.bluelinebottom {
+	border-bottom: solid 1px #0000FF;
+	}
+
+.table td.bluelinetop {
+	border-top: solid 1px #0000FF;
+	}
+
+
+.bluebox {
+	border: solid 2px #0000FF;
+	color: #0000FF;
+  	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	}
+
+.bondbox {
+	border: solid 2px #0000FF;
+	background-color: #E8FFFB;
+	color: #000000;
+  	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	}
+
+.plainbox {
+	border: solid 2px #000000;
+	background-color: #FFFFFF;
+	color: #000000;
+  	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	}
+
+.header {
+	border: solid 2px #A0C5E4;
+	color: #FFFFFF;
+	background-color: #A0C5E4;
+	font-size: 1.4em;
+  	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+  	margin: 0px;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	}
+
+.redbox {
+	border: solid 2px #FF0000;
+	color: #FF0000;
+	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	}
+
+.bluelines {
+	border-bottom: solid 1px #0000FF;
+	border-top: solid 1px #0000FF;
+	}
+
+.bluelinebottom {
+	border-bottom: solid 1px #0000FF;
+	}
+
+.bluelinetop {
+	border-top: solid 1px #0000FF;
+	}
+
+.line-through { text-decoration: line-through; }
+
+.blue { color: #003366;}
+
+.green { color: #078e07;}
+
+div.menuBar,
+div.menuBar a.menuButton,
+div.menu,
+div.menu a.menuItem {
+  font-family: 'Noto Sans', sans-serif, arial, verdana;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+
+div.menuBar {
+  background-color: #e0e0e0;
+  border: 2px outset #e0e0e0;
+  padding: 4px 2px 4px 2px;
+  text-align: left;
+  width: 100%;
+}
+
+div.menuBar a.menuButton {
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  color: #000000;
+  cursor: default;
+  left: 0px;
+  margin: 1px;
+  padding: 2px 6px 2px 6px;
+  position: relative;
+  text-decoration: none;
+  top: 0px;
+  z-index: 100;
+}
+
+div.menuBar a.menuButton:hover {
+  background-color: transparent;
+  border: 1px outset #e0e0e0;
+  color: #000000;
+}
+
+div.menuBar a.menuButtonActive,
+div.menuBar a.menuButtonActive:hover {
+  background-color: #5050f0;
+  border: 1px inset #e0e0e0;
+  color: #ffffff;
+  left: 1px;
+  top: 1px;
+}
+
+div.menu {
+  background-color: #e0e0e0;
+  border: 2px outset #e0e0e0;
+  left: 0px;
+  padding: 0px 1px 1px 0px;
+  position: absolute;
+  top: 0px;
+  visibility: hidden;
+  z-index: 101;
+}
+
+div.menu a.menuItem {
+  color: #000000;
+  cursor: default;
+  display: block;
+  padding: 3px 1em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+div.menu a.menuItem:hover, div.menu a.menuItemHighlight {
+  background-color: #5050f0;
+  color: #ffffff;
+}
+
+div.menu a.menuItem span.menuItemText {}
+
+div.menu a.menuItem span.menuItemArrow {
+  margin-right: -.75em;
+}
+
+div.menu div.menuItemSep {
+  border: 1px inset #e0e0e0;
+  margin: 4px 2px;
+}
+
+.cssbutton{
+background-color: #ff9900;
+border: 2px #d1ec4c outset;
+padding: 1px 4px;
+color: black;
+text-decoration: none;
+font: bold 90%;
+font-family: 'Noto Sans', sans-serif, arial, verdana;
+}
+
+
+.cssbutton:visited {
+color: black;
+ }
+
+.cssbutton:hover {
+border-style: inset;
+background-color: #e3f48e;
+padding: 2px 3px 0 5px; /*shift text 1px to the right and down*/
+}
+
+.cssbutton:active{
+color: black;
+}
+
+.error {
+
+background-color: red;
+color: white;
+font: bold 90%;
+font-family: 'Noto Sans', sans-serif, arial, verdana;
+margin-bottom: 5px;
+margin-top: 2px;
+margin-left: 2px;
+margin-right: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+
+}
+
+.zebra {
+}
+
+.zebra:nth-of-type(odd) {
+    background: #ebe7db;
+}
+
+.yellow { background-color: #DEFAAA; }
+
+.b1 { background-color: #ebe7db;font-family: 'Noto Sans', sans-serif, arial, verdana;}
+.b2 { background-color: #FFFFFF;font-family: 'Noto Sans', sans-serif, arial, verdana;color: #010858}
+.b3 { background-color: #FFFFCC; font-family: 'Noto Sans', sans-serif, arial, verdana; text-decoration: none }
+.b5 { background-color: #CCFFFF;font-family: 'Noto Sans', sans-serif, arial, verdana;}
+.b7 { background-color: #DDE;font-family: 'Noto Sans', sans-serif, arial, verdana;}
+.finalyear { background-color: #96ff5d;font-family: 'Noto Sans', sans-serif, arial, verdana;}

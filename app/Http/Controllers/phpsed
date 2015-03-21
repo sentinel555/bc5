@@ -1,0 +1,2 @@
+s/width=625,height=400,//gi
+s/resizable=no/resizable=yes/gi

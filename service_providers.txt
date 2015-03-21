@@ -1,0 +1,114 @@
+Laravel 5, as i said in a previous post, encorages you to take advantage of Service Providers, they not only make your code cleaner but helps you make it more robuts and decopable.
+
+Before start creating a Custom Service Provider, we should take a look into the pre existent ones and try to understand what eachone of them do.
+
+Follow this article with the source code at https://github.com/hernandev/testing-laravel-5/tree/feature/2_service_providers
+Take a look at the app/Providers folder, you will notice some providers that came with your empty install, they are responsibility divided, and their purposes are:
+
+AppServiceProvider
+
+This is the main ServiceProvider at your project level, because it loads the new Stack, which mean, register Laravel Core Middlewares and custom ones, don't you worry, you will learn more about the Middlewares in the next posts.
+
+ArtisanServiceProvider
+
+Responsible of registering the commands of your application, much more cleaner than instanciating them inside a bootstrap file like most people did on Laravel 4.
+
+ErrorServiceProvider
+
+The provider that handles errors and exceptions of your application, if you use any debugger package or library, like BugSnag, this provider is the perfect place to register it.
+
+EventServiceProvider
+
+The name already said everything: handling your application events, the perfect place to register your observers, for example.
+
+LogServiceProvider
+
+This new version is so well organized, that is becoming hard do explain the obvious, so, of course you already know what this one does.
+
+RouteServiceProvider
+
+Intead of having a flat routes.php file loaded by the framework, you can now use this service provider to include the routes file, attaching any logic you may want, take a look at this file and you will understand it easily.
+
+A MarkdownServiceProvider
+
+Let's say we need to parse Markdown on our sandbox application, there are a lot of libraries out there already, some with Laravel wrapper, etc.
+Instead of installing a Laravel compliant Markdown Parser, let's install a generic one and register it on his own ServiceProvider.
+
+Installing the dependencies
+
+We are going to use Ciconia as our Markdown parser, ir has a lot of extensions and it's the one i use on this blog.
+
+To install it, add this line:
+
+    "kzykhys/ciconia": "~1.0.0"
+to your your composer.json "require" section, after doind it, it should looks like:
+
+"require": {
+    "laravel/framework": "~5.0",
+    "kzykhys/ciconia": "~1.0.0"
+},
+after registering the dependency, run
+
+$ composer update
+in order to install it on our project
+
+Note: if composer update takes too long to complete or raise an error, remove vendor folder and composer.lock file and run composer install, composer is getting some problemns in update a project with large number of unstable dependencies.
+After installing the needed dependency, we are going to create or markdown service provider, artisan provide us a simple way to scaffold a new one, by running:
+
+$ php artisan make:provider MarkdownServiceProvider
+a new file will be created at app/Providers/MarkdownServiceProvider.php
+
+Go ahead and take a look at this file, the first thing to note is that the MarkdownServiceProvider class extends the Illuminate\Support\ServiceProvider, which make it usable by the framework.
+
+The two boilerplate methods inside this class are boot() and register(), if you need further more explanation about it, i recommend you to read the docs.
+
+In order to correcly parse the Markdown the way we want, we should create a Ciconia instance inside our boot() method and register it on the IoC, on the method register(), the final MarkdownServiceProvider would be something like:
+
+<?php namespace Hernandev\Sandbox\Providers;
+
+use Ciconia\Ciconia;
+use Ciconia\Extension\Gfm;
+use Illuminate\Support\ServiceProvider;
+
+class MarkdownServiceProvider extends ServiceProvider
+{
+    protected $markdown;
+
+    public function boot()
+    {
+        $this->markdown = new Ciconia();
+        $this->markdown->addExtension(new Gfm\FencedCodeBlockExtension());
+        $this->markdown->addExtension(new Gfm\TaskListExtension());
+        $this->markdown->addExtension(new Gfm\InlineStyleExtension());
+        $this->markdown->addExtension(new Gfm\WhiteSpaceExtension());
+        $this->markdown->addExtension(new Gfm\TableExtension());
+        $this->markdown->addExtension(new Gfm\UrlAutoLinkExtension());
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->singleton('markdown', function () {
+            return $this->markdown;
+        });
+    }
+
+}
+and then, register this new Service Provider in config/app.php file
+
+    ...
+    'Hernandev\Sandbox\Providers\MarkdownServiceProvider',
+    ...
+Now, what about testing it?
+
+Start the artisan tinker to live interact with your app
+
+$ php artisan tinker
+and them, try rendering some markdown content, type;
+
+[1] > app('markdown')->render('##title h2');
+See you.
